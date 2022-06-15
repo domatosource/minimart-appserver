@@ -2,6 +2,12 @@
 
 Minimart AppServer
 
+Objectives Attempted
+1. CRUD for product with JSON response
+2. Input validation with swagger
+3. Logging with pino
+4. Database wrapper ODM with mongoose
+
 ## Quick Start
 
 Ensure Node and npm is installed 
