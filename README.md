@@ -4,76 +4,46 @@ Minimart AppServer
 
 ## Quick Start
 
-To run the appserver in dev mode
-
 Ensure Node and npm is installed 
 
-```shell
-# install deps
-npm install
+1. Install ts-node
+```npm install -g ts-node```
 
-# run in development mode
-npm run dev
+2. Install dependencies
+```npm install```
 
-# run tests
-npm run test
+3. Setup database
+The app requires mongodb. You may install it locally or run a docker image
+https://www.mongodb.com/
+or
+https://hub.docker.com/_/mongo
+
+4. Setup environment variables
+Create a file .env in the root directory and paste these contents (easiest way)
 ```
+APP_ID=minimart-appserver
+PORT=3001
+LOG_LEVEL=debug
+REQUEST_LIMIT=100kb
+SESSION_SECRET=mySecret
+MONGO_HOST=127.0.0.1
+MONGO_PORT=27017
+MONGO_DB=minimartDB
 
----
-
-## Install Dependencies
-
-Install all package dependencies (one time operation)
-
-```shell
-npm install
+#Swagger
+SWAGGER_API_SPEC=/spec
 ```
+You may change the values to suit your preferences
 
-## Run It
-#### Run in *development* mode:
-Runs the application is development mode. Should not be used in production
+5. Run the appserver in dev mode
+``` npm run dev ```
 
-```shell
-npm run dev
+6. To run in production mode
 ```
-
-or debug it
-
-```shell
-npm run dev:debug
-```
-
-#### Run in *production* mode:
-
-Compiles the application and starts it in production production mode.
-
-```shell
 npm run compile
 npm start
 ```
 
-## Try It
-* Open you're browser to [http://localhost:3000](http://localhost:3000)
-* Invoke the `/examples` endpoint 
-  ```shell
-  curl http://localhost:3000/api/v1/examples
-  ```
 
-
-## Debug It
-
-#### Debug the server:
-
-```
-npm run dev:debug
-```
-
-#### Debug Tests
-
-```
-npm run test:debug
-```
-
-#### Debug with VSCode
-
-Add these [contents](https://github.com/cdimascio/generator-express-no-stress/blob/next/assets/.vscode/launch.json) to your `.vscode/launch.json` file
+Boilerplate code was generated with generator-express-no-stress-typescript-mongoose
+https://www.npmjs.com/package/generator-express-no-stress-typescript-mongoose
