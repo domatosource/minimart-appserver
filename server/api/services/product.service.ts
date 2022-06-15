@@ -8,7 +8,6 @@ import { Product, IProductModel } from '../models/product';
 export class ExamplesService {
 
   async all(): Promise<IProductModel[]> {
-    console.log("hhhh");
     L.info('fetch all products');
 
     const docs = await Product
